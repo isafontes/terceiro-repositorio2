@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');More actions
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
 
 :root{
     --branco: white;
@@ -51,7 +51,9 @@ body{
 }
 
 #campo-senha:focus{
-@@ -56,4 +57,36 @@
+    outline: none;
+}
+
 .conteudo{
     max-width: 1200px;
     margin: 0 auto;
