@@ -2,14 +2,13 @@ const numeroSenha = document.querySelector('.parametro-senha__texto');
 const campoSenha = document.querySelector('#campo-senha');
 const checkbox = document.querySelectorAll('.checkbox');
 const botoes = document.querySelectorAll('.parametro-senha__botao');
-const forcaSenha = document.querySelector('forca');
+const forcaSenha = document.querySelector('.forca');
 const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const letrasMinuscula = 'abcdefghijklmnopqrstuvwxyz';
+const letrasMinusculas = 'abcdefghijklmnopqrstuvwxyz';
 const numeros = '0123456789';
 const simbolos = '!@%*?';
 let tamanhoSenha = 12;
 numeroSenha.textContent = tamanhoSenha;
-
 
 botoes[0].onclick = diminuiTamanho;
 botoes[1].onclick = aumentaTamanho;
@@ -31,21 +30,20 @@ function aumentaTamanho() {
 }
 
 
-
 geraSenha();
 
 function geraSenha() {
     let alfabeto = '';
-    if (checkbox[0].cheked){
+    if (checkbox[0].checked){
         alfabeto = alfabeto + letrasMaiusculas;
     }
-    if (checkbox[1].cheked){
-        alfabeto = alfabeto + letrasMinuscula;
+    if (checkbox[1].checked){
+        alfabeto = alfabeto + letrasMinusculas;
     }
-    if (checkbox[2].cheked){
+    if (checkbox[2].checked){
         alfabeto = alfabeto + numeros;
     }
-    if (checkbox[3].cheked){
+    if (checkbox[3].checked){
         alfabeto = alfabeto + simbolos;
     }
 
@@ -54,19 +52,18 @@ function geraSenha() {
         let numeroAleatorio = Math.random()*alfabeto.length;
         numeroAleatorio = Math.floor(numeroAleatorio);
         senha = senha + alfabeto[numeroAleatorio];
-        classificaSenha();
     }
-    campoSenha.value = senha; 
+    campoSenha.value = senha;
+    classificaSenha();
 }
 
-function classificaSenha(){
+function classificaSenha() {
     forcaSenha.classList.remove('fraca', 'media', 'forte');
     if (tamanhoSenha>11){
         forcaSenha.classList.add('forte');
-    } else if (tamanhoSenha>5 && tamanhoSenha<12){
+    } else if (tamanhoSenha>5 && tamanhoSenha<12) {
         forcaSenha.classList.add('media');
     } else if (tamanhoSenha<=5){
         forcaSenha.classList.add('fraca');
     }
-
 }
