@@ -129,14 +129,14 @@ label {
     bottom: 30px;
 }
 
-.fraca{
-    width: 25%;
-    background-color: #E71832;
-}
-
 .parametro-senha-textos {
     display: flex;
     justify-content: space-between;
+}
+
+.fraca{
+    width: 25%;
+    background-color: #E71832;
 }
 
 .media {
